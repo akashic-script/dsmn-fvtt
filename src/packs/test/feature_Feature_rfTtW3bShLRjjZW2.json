@@ -1,0 +1,28 @@
+{
+  "name": "Feature",
+  "type": "feature",
+  "_id": "rfTtW3bShLRjjZW2",
+  "img": "icons/svg/item-bag.svg",
+  "system": {
+    "description": ""
+  },
+  "effects": [],
+  "folder": null,
+  "sort": 0,
+  "ownership": {
+    "default": 0,
+    "X40HblT7XeJCeTvd": 3
+  },
+  "flags": {},
+  "_stats": {
+    "compendiumSource": null,
+    "duplicateSource": null,
+    "coreVersion": "12.331",
+    "systemId": "dsmn",
+    "systemVersion": "#{VERSION}#",
+    "createdTime": 1730137864422,
+    "modifiedTime": 1730137864422,
+    "lastModifiedBy": "X40HblT7XeJCeTvd"
+  },
+  "_key": "!items!rfTtW3bShLRjjZW2"
+}

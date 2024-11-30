@@ -1,0 +1,151 @@
+{
+	"DSMN": {
+		"Attribute": {
+			"Str": {
+				"long": "Strength",
+				"abbr": "str"
+			},
+			"Int": {
+				"long": "Intelligence",
+				"abbr": "int"
+			},
+			"Dex": {
+				"long": "Dexterity",
+				"abbr": "dex"
+			},
+			"Wlp": {
+				"long": "Willpower",
+				"abbr": "wlp"
+			},
+			"Sta": {
+				"long": "Stamina",
+				"abbr": "sta"
+			}
+		},
+		"Skill": {
+			"Athletics": { "long": "Athletics" },
+			"Academia": { "long": "Academia" },
+			"Craftsmanship": { "long": "Craftsmanship" },
+			"Intuition": { "long": "Intuition" },
+			"Medicine": { "long": "Medicine" },
+			"Perceiving": { "long": "Perceiving" },
+			"Stealth": { "long": "Stealth" },
+			"Outdoorsmanship": { "long": "Outdoorsmanship" }
+		},
+		"SheetLabels": {
+			"Actor": "DSMN Actor Sheet",
+			"Item": "DSMN Item Sheet"
+		},
+		"Actor": {
+			"Tabs": {
+				"Description": "Descriptions",
+				"Features": "Features",
+				"Gear": "Gear",
+				"Spells": "Spells",
+				"Effects": "Effects"
+			},
+			"base": {
+				"FIELDS": {
+					"description": {
+						"label": "description"
+					},
+					"hp": {
+						"value": {
+							"label": "HP"
+						},
+						"max": {
+							"label": "Max HP"
+						}
+					},
+					"wp": {
+						"value": {
+							"label": "WP"
+						},
+						"max": {
+							"label": "Max WP"
+						}
+					}
+				}
+			},
+			"Character": {
+				"FIELDS": {
+					"level.value": {
+						"label": "Level"
+					},
+					"merit.value": {
+						"label": "Merits"
+					}
+				},
+				"toLevel": {
+					"label": "To Level"
+				}
+			},
+			"NPC": {
+				"FIELDS": {
+					"cr": {
+						"label": "CR"
+					}
+				},
+				"xp": {
+					"label": "XP"
+				}
+			}
+		},
+		"Item": {
+			"Tabs": {
+				"Attributes": "Attributes",
+				"Description": "Description",
+				"Effects": "Effects"
+			},
+			"Gear": {
+				"FIELDS": {
+					"rollFormula": {
+						"label": "Roll Formula"
+					},
+					"numDice": {
+						"label": "Number of Dice"
+					},
+					"dieSize": {
+						"label": "Die Size"
+					},
+					"rollMod": {
+						"label": "Roll Modifier"
+					},
+					"quantity": {
+						"label": "Quantity"
+					},
+					"weight": {
+						"label": "Weight"
+					}
+				}
+			},
+			"Spell": {
+				"FIELDS": {
+					"level": {
+						"label": "Spell Level"
+					}
+				},
+				"SpellLVL": "Level {level} Spells",
+				"AddLVL": "Add LVL {level}"
+			}
+		},
+		"Effect": {
+			"Source": "Source",
+			"Toggle": "Toggle Effect",
+			"Temporary": "Temporary Effects",
+			"Passive": "Passive Effects",
+			"Inactive": "Inactive Effects"
+		}
+	},
+	"TYPES": {
+		"Actor": {
+			"character": "Character",
+			"npc": "NPC"
+		},
+		"Item": {
+			"gear": "Gear",
+			"feature": "Feature",
+			"spell": "Spell"
+		}
+	}
+}

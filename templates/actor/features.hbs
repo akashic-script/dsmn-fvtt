@@ -1,0 +1,113 @@
+{{! Features Tab }}
+<section class='tab features {{tab.cssClass}}' data-group='primary' data-tab='features'>
+  <section class='grid grid-3col'>
+    <aside class='sidebar'>
+      {{! The grid classes are defined in scss/global/_grid.scss. To use,
+      use both the "grid" and "grid-Ncol" class where "N" can be any number
+      from 1 to 12 and will create that number of columns. }}
+      <div class='attributes flexcol'>
+        <!-- Header Row for Column Labels -->
+        <div class='attribute-header flexrow flex-group-center' style="gap: 5px;">
+          <span class='flexlarge align-left'>Attributes</span>
+          <span class="attribute-score">Base</span>
+          <span class="attribute-mod">Mod</span>
+          <span class='attribute-mod rollable'>Total</span>
+        </div>
+        {{#each system.attributes as |attribute key|}}
+        <div class='attribute flexrow flex-group-center' style="gap: 5px;">
+          <label class='resource-label rollable flexlarge align-left' data-action='roll'
+            data-roll='1d6+@attributes.{{key}}.mod' style='text-transform: uppercase;'
+            data-label='{{localize (lookup @root.config.attributes key)}}'>
+            {{!-- {{localize (lookup @root.config.attributeAbbreviations key)}} --}}
+            {{attribute.abbr}}
+            </label>
+
+          <!-- Value input -->
+          <input type='text' name='system.attributes.{{key}}.value' value='{{attribute.value}}' class="attribute-score"
+            data-dtype='Number' />
+
+          <!-- Mod input -->
+          <input type='text' name='system.attributes.{{key}}.mod' value='{{attribute.mod}}' class="attribute-mod"
+            data-dtype='Number' />
+
+          <span class='attribute-mod rollable' data-action='roll' data-roll='1d6+@attributes.{{key}}.total'
+            data-label='{{localize (lookup @root.config.attributes key)}}'>{{numberFormat attribute.total decimals=0
+            sign=true}}</span>
+        </div>
+        {{/each}}
+      </div>
+
+    <div class='skills flexcol'>
+      <div class='skill-header flexrow flex-group-center' style="gap: 5px;">
+        <span class='flexlarge align-left'>Skills</span>
+        <span class="skill-value">Value</span>
+        <span class="skill-attribute">Attribute</span>
+        <span class='skill-total rollable'>Total</span>
+      </div>
+      {{#each system.skills as |skill key|}}
+      <div class='skill flexrow flex-group-center' style="gap: 5px;">
+        <label class='resource-label rollable flexlarge align-left' style="font-size:smaller;" data-action='roll'
+          data-roll='1d6+@skills.{{key}}.value' style='text-transform: uppercase;'
+          data-label='{{localize (lookup (lookup @root.config.baseSkills key) "label")}}'>
+          {{!-- {{localize (lookup (lookup @root.config.baseSkills key) "label")}} --}}
+          {{skill.label}}
+        </label>
+        <input type='text' name='system.skills.{{key}}.value' value='{{skill.value}}' class="skill-value"
+          data-dtype='Number' />
+        {{!-- <select name='system.skills.{{key}}.attribute'>
+          {{selectOptions @root.config.attributeAbbreviations selected=skill.attribute localize=true}}
+        </select> --}}
+        <label class="skill-attribute">
+          {{localize (lookup @root.config.attributeAbbreviations skill.attribute)}}
+        </label>
+        <span class='skill-total rollable' data-action='roll' data-roll='1d6+@skills.{{key}}.total+@attributes.{{key}}.total'
+          data-label='{{localize (lookup @root.config.baseSkills key.label)}}'>{{numberFormat skill.total decimals=0 sign=true}}</span>
+      </div>
+      {{/each}}
+    </div>
+
+    </aside>
+
+    {{! For the main features list, span the right two columns }}
+    <section class='main grid-span-2'>
+      <ol class='items-list'>
+        <li class='item flexrow items-header'>
+          <div class='item-name'>{{localize 'Name'}}</div>
+          <div class='item-controls'>
+            {{#if @root.editable}}
+            <a class='item-control item-create' title='Create item' data-action='createDoc' data-document-class='Item'
+              data-type='feature'>
+              <i class='fas fa-plus'></i>
+              {{localize 'DOCUMENT.New' type='feature'}}
+            </a>
+            {{/if}}
+          </div>
+        </li>
+        {{#each features as |item id|}}
+        <li class='item flexrow' data-item-id='{{item._id}}' data-drag='true' data-document-class='Item'>
+          <div class='item-name'>
+            <div class='item-image'>
+              <a class='rollable' data-roll-type='item' data-action='roll'>
+                <img src='{{item.img}}' title='{{item.name}}' width='24' height='24' />
+              </a>
+            </div>
+            <div>{{item.name}}</div>
+          </div>
+          <div class='item-controls'>
+            <a class='item-control item-edit' title='{{localize "DOCUMENT.Update" type=' feature'}}'
+              data-action='viewDoc'>
+              <i class='fas fa-edit'></i>
+            </a>
+            {{#if @root.editable}}
+            <a class='item-control item-delete' title='{{localize "DOCUMENT.Delete" type=' feature'}}'
+              data-action='deleteDoc'>
+              <i class='fas fa-trash'></i>
+            </a>
+            {{/if}}
+          </div>
+        </li>
+        {{/each}}
+      </ol>
+    </section>
+  </section>
+</section>

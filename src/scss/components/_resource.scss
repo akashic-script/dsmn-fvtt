@@ -1,0 +1,15 @@
+.resource-label {
+	font-weight: bold;
+}
+
+.attribute, .skill {
+	margin: 2px 0;
+}
+
+.attribute-score,
+.attribute-mod, 
+.skill-value,
+.skill-attribute,
+.skill-total {
+	flex: 0 0 44px;
+}

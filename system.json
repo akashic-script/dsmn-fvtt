@@ -1,0 +1,91 @@
+{
+	"id": "dsmn",
+	"title": "DSMN",
+	"description": "An official DSMN system for FoundryVTT!",
+	"version": "#{VERSION}#",
+	"compatibility": {
+		"minimum": "12",
+		"verified": "12"
+	},
+	"authors": [
+		{
+			"name": "Spyrella",
+			"discord": "spyrella",
+			"url": "https://github.com/spyrella"
+		}
+	],
+	"documentTypes": {
+		"Actor": {
+			"character": {
+				"htmlFields": ["description"]
+			},
+			"npc": {
+				"htmlFields": ["description"]
+			}
+		},
+		"Item": {
+			"feature": {
+				"htmlFields": ["description"]
+			},
+			"gear": {
+				"htmlFields": ["description"]
+			},
+			"spell": {
+				"htmlFields": ["description"]
+			}
+		}
+	},
+	"flags": {
+		"hotReload": {
+			"extensions": ["css", "html", "hbs", "json"],
+			"paths": ["css", "lang", "templates"]
+		}
+	},
+	"media": [
+		{
+			"type": "setup",
+			"url": "systems/dsmn/assets/anvil-impact.png",
+			"thumbnail": "systems/dsmn/assets/anvil-impact.png"
+		}
+	],
+	"esmodules": ["module/dsmn.mjs"],
+	"styles": ["css/dsmn.css"],
+	"languages": [
+		{
+			"lang": "en",
+			"name": "English",
+			"path": "lang/en.json"
+		}
+	],
+	"packs": [
+		{
+			"label": "Test",
+			"type": "Item",
+			"name": "test",
+			"path": "packs/test",
+			"system": "dsmn",
+			"ownership": {
+				"PLAYER": "OBSERVER",
+				"ASSISTANT": "OWNER"
+			}
+		}
+	],
+	"packFolders": [],
+	"socket": true,
+	"grid": {
+		"type": 1,
+		"distance": 5,
+		"units": "ft",
+		"diagonals": 0
+	},
+	"primaryTokenAttribute": "hp",
+	"secondaryTokenAttribute": "wp",
+	"license": "LICENSE",
+	"readme": "README.md",
+	"bugs": "https://github.com/AkashicScript/FoundryVTT-DSMN/issues",
+	"changelog": "CHANGELOG.md",
+	"url": "#{URL}#",
+	"manifest": "#{MANIFEST}#",
+	"download": "#{DOWNLOAD}#",
+	"background": "systems/dsmn/assets/anvil-impact.png"
+}
