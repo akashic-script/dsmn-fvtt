@@ -1,8 +1,8 @@
-# DSMN System for FoundryVTT
+# Daemon Summoner System for FoundryVTT
 
 ![foundry-v12-red](https://img.shields.io/badge/foundry-v12-red)
 
-This is an official FoundryVTT system implementation for [DSMN]() by [Stargrand](https://github.com/Stargrand).
+This is an official FoundryVTT system implementation for [Daemon Summoner]() by [Stargrand](https://github.com/Stargrand).
 
 ## Installation
 
